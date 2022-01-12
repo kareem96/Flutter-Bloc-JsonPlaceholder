@@ -21,7 +21,7 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin{
   @override
   void initState() {
     _tabController = TabController(length: 2, vsync: this, initialIndex: 0);
-    // context.read<UserBloc>().loadUserList();
+    context.read<UserBloc>().loadUserList();
     super.initState();
   }
 

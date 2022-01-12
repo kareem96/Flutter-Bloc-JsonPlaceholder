@@ -43,36 +43,7 @@ class _ListPageState extends State<ListPage> {
             return Center(child: Text('Error'),);
           }
           return SizedBox();
-          /*return FutureBuilder<bool>(
-            builder: (BuildContext context, AsyncSnapshot<bool> snapshot){
-              if(!snapshot.hasData){
-                return const SizedBox();
-              }else{
-                return ListView.builder(
-                  itemCount: state.data!.length,
-                  itemBuilder: (context, index) =>
-                    Container(
-                    color: index % 2 == 0 ? Colors.white : Colors.blue[50],
-                    child: Column(
-                      children: [
-                        Text('test')
-                      ],
-                    )
-                  ),
-                  *//*final int count = state.data!.length > 10 ? 10 : state.data!.length;
-                    final Animation<double> animation = Tween<double>(
-                      begin: 0.0, end: 1.0
-                    ).animate(CurvedAnimation(parent: animationController!, curve: Interval(( 1 / count) * index, 1.0, curve: Curves.fastOutSlowIn)));
-                    return ListUser(
-                      user: state.data![index],
-                      animation: animation,
-                      animationController: animationController,
-                    );*//*
-                );
-              }
-            },
-          );*/
-        },
+          },
       ),
     );
   }
