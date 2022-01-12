@@ -21,20 +21,20 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin{
   @override
   void initState() {
     _tabController = TabController(length: 2, vsync: this, initialIndex: 0);
-    /*context.read<UserBloc>().loadUserList();*/
+
     super.initState();
   }
 
   @override
   void dispose() {
-    // _tabController.dispose();
+    _tabController.dispose();
     super.dispose();
   }
 
   Widget _buildBottomNav(HomeBottomNavIndexBloc homeBottomNavIndexBloc){
     return ConvexAppBar(
       controller: _tabController,
-      items: [
+      items: const [
         TabItem(icon: Icons.list, title: 'List'),
         TabItem(icon: Icons.save, title: 'Form'),
       ],

@@ -4,7 +4,6 @@ import 'dart:convert';
 import 'package:abdul_karim_test/bloc/state/data_state.dart';
 import 'package:abdul_karim_test/data/api/api_service.dart';
 import 'package:abdul_karim_test/data/model/user.dart';
-import 'package:abdul_karim_test/data/response/user_response.dart';
 
 class UserRepository{
   Future<DataState<List<User>>> getUserList() async{

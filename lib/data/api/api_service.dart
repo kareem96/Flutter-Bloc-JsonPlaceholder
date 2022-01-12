@@ -17,7 +17,6 @@ class ApiService {
   }
 
   Future<http.Response> getList() => doGet('/posts?_start=0&_limit=20');
-  // Future<http.Response> getList() => doGet('/users');
 
   Future<http.Response> doGet(String path, {Map<String, String> headers = const{}, String base = ''}) async{
     final defaultHeaders = await getDefaultHeader();
