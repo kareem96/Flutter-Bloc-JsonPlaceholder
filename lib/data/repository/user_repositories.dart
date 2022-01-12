@@ -13,13 +13,13 @@ class UserRepository{
     final response = await ApiService().getList();
 
     print(response.body);
-    if(response.statusCode < 200 || response.statusCode >= 300 || !response.body.startsWith('{')
-    ){
+    if(response.statusCode < 200 || response.statusCode >= 300 || !response.body.startsWith('{')){
       return DataStateError(message: response.body);
     }else{
-      final List<dynamic> userJson = json.decode(response.body);
+      // final List<dynamic> userJson = json.decode(response.body);
       // return DataStateSuccess(data: userJson.map((x) => User.fromJson(x)).toList());
-      return DataStateSuccess(data: userJson.map((x) => User.fromJson(x)).toList());
+      var result = jsonDecode(response.body);
+      return DataStateSuccess(data: result.map((x) => User.fromJson(x)).toList());
     }
   }
 }
