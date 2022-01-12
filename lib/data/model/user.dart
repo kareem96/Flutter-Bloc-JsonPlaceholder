@@ -13,10 +13,10 @@ class User {
   String body;
 
   factory User.fromJson(Map<String, dynamic> json) => User(
-    userId: json["userId"],
-    id: json["id"],
-    title: json["title"],
-    body: json["body"],
+    userId: json["userId"] ?? 0,
+    id: json["id"] ?? 0,
+    title: json["title"] ?? '',
+    body: json["body"] ?? '',
   );
 
   Map<String, dynamic> toJson() => {

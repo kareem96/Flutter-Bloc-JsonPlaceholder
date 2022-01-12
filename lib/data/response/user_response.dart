@@ -11,6 +11,12 @@ class UserResponse{
   UserResponse({this.user = const []});
 
   factory UserResponse.fromJson(Map<String, dynamic> json) => UserResponse(
-    user: json['']
-  )
-}*/
+    user: json['user'] == null ? []
+        :(json['user'] as Iterable).map<User>((e) => User.fromJson(e)).toList(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'user': user.map((e) => e.toJson()).toList(),
+  };
+}
+*/
