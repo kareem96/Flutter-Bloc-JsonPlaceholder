@@ -18,8 +18,6 @@ class UserRepository{
     }else{
       final List<dynamic> userJson = json.decode(response.body);
       return DataStateSuccess(data: userJson.map((x) => User.fromJson(x)).toList());
-      // var result = jsonDecode(response.body);
-      // return DataStateSuccess(data: result.map((x) => User.fromJson(x)).toList());
     }
   }
 }
